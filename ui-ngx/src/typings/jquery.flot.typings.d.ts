@@ -128,3 +128,43 @@ interface JQueryPlotSelectionRanges {
     to: number;
   };
 }
+
+declare module 'flot/src/jquery.flot.js' {
+  const value: any;
+  export default value;
+}
+
+declare module 'flot/lib/jquery.colorhelpers.js' {
+  const value: any;
+  export default value;
+}
+
+declare module 'flot/src/plugins/jquery.flot.time.js' {
+  const value: any;
+  export default value;
+}
+
+declare module 'flot/src/plugins/jquery.flot.selection.js' {
+  const value: any;
+  export default value;
+}
+
+declare module 'flot/src/plugins/jquery.flot.pie.js' {
+  const value: any;
+  export default value;
+}
+
+declare module 'flot/src/plugins/jquery.flot.crosshair.js' {
+  const value: any;
+  export default value;
+}
+
+declare module 'flot/src/plugins/jquery.flot.stack.js' {
+  const value: any;
+  export default value;
+}
+
+declare module 'flot/src/plugins/jquery.flot.symbol.js' {
+  const value: any;
+  export default value;
+}

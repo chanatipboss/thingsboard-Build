@@ -55,6 +55,9 @@
       ],
       "jstree": [
         "node_modules/jstree/dist/jstree.min.js"
+      ],
+      "ngx-flowchart": [
+        "node_modules/ngx-flowchart/dist/ngx-flowchart"
       ]
     },
     "lib": [
