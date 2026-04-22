@@ -10241,6 +10241,24 @@
   "overview": {
     "overview": "ภาพรวม"
   },
+  "sites-plots-ponds": {
+    "sites-plots-ponds": "Sites / Plots / Ponds"
+  },
+  "my-devices": {
+    "my-devices": "อุปกรณ์"
+  },
+  "my-alarms": {
+    "my-alarms": "การแจ้งเตือน"
+  },
+  "my-tasks": {
+    "my-tasks": "งาน"
+  },
+  "my-analytics": {
+    "my-analytics": "วิเคราะห์"
+  },
+  "my-users": {
+    "my-users": "ผู้ใช้"
+  },
   "language": {
     "auto": "อัตโนมัติ",
     "language": "ภาษา",

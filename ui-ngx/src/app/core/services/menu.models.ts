@@ -110,7 +110,13 @@ export enum MenuId {
   api_usage = 'api_usage',
   trendz_settings = 'trendz_settings',
   ai_models = 'ai_models',
-  overview = 'overview'
+  overview = 'overview',
+  sites_plots_ponds = 'sites_plots_ponds',
+  my_devices = 'my_devices',
+  my_alarms = 'my_alarms',
+  my_tasks = 'my_tasks',
+  my_analytics = 'my_analytics',
+  my_users = 'my_users'
 }
 
 declare type MenuFilter = (authState: AuthState) => boolean;
@@ -124,6 +130,66 @@ export const menuSectionMap = new Map<MenuId, MenuSection>([
       type: 'link',
       path: '/dashboards/2682a580-f69d-11f0-a48b-5389a77cb104',
       icon: 'dashboard'
+    }
+  ],
+  [
+    MenuId.sites_plots_ponds,
+    {
+      id: MenuId.sites_plots_ponds,
+      name: 'sites-plots-ponds.sites-plots-ponds',
+      type: 'link',
+      path: '/dashboards/2681e230-f69d-11f0-a48b-5389a77cb104',
+      icon: 'place'
+    }
+  ],
+  [
+    MenuId.my_devices,
+    {
+      id: MenuId.my_devices,
+      name: 'my-devices.my-devices',
+      type: 'link',
+      path: '/dashboards/2681e230-f69d-11f0-a48b-5389a77cb104',
+      icon: 'memory'
+    }
+  ],
+  [
+    MenuId.my_alarms,
+    {
+      id: MenuId.my_alarms,
+      name: 'my-alarms.my-alarms',
+      type: 'link',
+      path: '/dashboards/2681e230-f69d-11f0-a48b-5389a77cb104',
+      icon: 'notifications_active'
+    }
+  ],
+  [
+    MenuId.my_tasks,
+    {
+      id: MenuId.my_tasks,
+      name: 'my-tasks.my-tasks',
+      type: 'link',
+      path: '/dashboards/2681e230-f69d-11f0-a48b-5389a77cb104',
+      icon: 'assignment'
+    }
+  ],
+  [
+    MenuId.my_analytics,
+    {
+      id: MenuId.my_analytics,
+      name: 'my-analytics.my-analytics',
+      type: 'link',
+      path: '/dashboards/2681e230-f69d-11f0-a48b-5389a77cb104',
+      icon: 'bar_chart'
+    }
+  ],
+  [
+    MenuId.my_users,
+    {
+      id: MenuId.my_users,
+      name: 'my-users.my-users',
+      type: 'link',
+      path: '/dashboards/2681e230-f69d-11f0-a48b-5389a77cb104',
+      icon: 'people'
     }
   ],
   [
@@ -771,6 +837,12 @@ const defaultUserMenuMap = new Map<Authority, MenuReference[]>([
     Authority.SYS_ADMIN,
     [
       {id: MenuId.overview},
+      {id: MenuId.sites_plots_ponds},
+      {id: MenuId.my_devices},
+      {id: MenuId.my_alarms},
+      {id: MenuId.my_tasks},
+      {id: MenuId.my_analytics},
+      {id: MenuId.my_users},
       {id: MenuId.home},
       {id: MenuId.tenants},
       {id: MenuId.tenant_profiles},
@@ -838,6 +910,12 @@ const defaultUserMenuMap = new Map<Authority, MenuReference[]>([
     Authority.TENANT_ADMIN,
     [
       {id: MenuId.overview},
+      {id: MenuId.sites_plots_ponds},
+      {id: MenuId.my_devices},
+      {id: MenuId.my_alarms},
+      {id: MenuId.my_tasks},
+      {id: MenuId.my_analytics},
+      {id: MenuId.my_users},
       {id: MenuId.home},
       {
         id: MenuId.alarms_center,
@@ -943,6 +1021,12 @@ const defaultUserMenuMap = new Map<Authority, MenuReference[]>([
     Authority.CUSTOMER_USER,
     [
       {id: MenuId.overview},
+      {id: MenuId.sites_plots_ponds},
+      {id: MenuId.my_devices},
+      {id: MenuId.my_alarms},
+      {id: MenuId.my_tasks},
+      {id: MenuId.my_analytics},
+      {id: MenuId.my_users},
       {id: MenuId.home},
       {id: MenuId.alarms},
       {id: MenuId.dashboards},

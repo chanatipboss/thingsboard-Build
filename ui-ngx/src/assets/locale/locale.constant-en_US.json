@@ -10241,6 +10241,24 @@
     "overview": {
         "overview": "Overview"
     },
+    "sites-plots-ponds": {
+        "sites-plots-ponds": "Sites / Plots / Ponds"
+    },
+    "my-devices": {
+        "my-devices": "Devices"
+    },
+    "my-alarms": {
+        "my-alarms": "Alarms"
+    },
+    "my-tasks": {
+        "my-tasks": "Tasks"
+    },
+    "my-analytics": {
+        "my-analytics": "Analytics"
+    },
+    "my-users": {
+        "my-users": "Users"
+    },
     "language": {
         "auto": "Auto",
         "language": "Language",
