@@ -10238,6 +10238,9 @@
         "previous-page-label": "Previous page",
         "items-per-page-separator": "of"
     },
+    "overview": {
+        "overview": "Overview"
+    },
     "language": {
         "auto": "Auto",
         "language": "Language",

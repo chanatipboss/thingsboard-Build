@@ -109,12 +109,23 @@ export enum MenuId {
   version_control = 'version_control',
   api_usage = 'api_usage',
   trendz_settings = 'trendz_settings',
-  ai_models = 'ai_models'
+  ai_models = 'ai_models',
+  overview = 'overview'
 }
 
 declare type MenuFilter = (authState: AuthState) => boolean;
 
 export const menuSectionMap = new Map<MenuId, MenuSection>([
+  [
+    MenuId.overview,
+    {
+      id: MenuId.overview,
+      name: 'overview.overview',
+      type: 'link',
+      path: '/dashboards/2682a580-f69d-11f0-a48b-5389a77cb104',
+      icon: 'dashboard'
+    }
+  ],
   [
     MenuId.home,
     {
@@ -759,6 +770,7 @@ const defaultUserMenuMap = new Map<Authority, MenuReference[]>([
   [
     Authority.SYS_ADMIN,
     [
+      {id: MenuId.overview},
       {id: MenuId.home},
       {id: MenuId.tenants},
       {id: MenuId.tenant_profiles},
@@ -825,6 +837,7 @@ const defaultUserMenuMap = new Map<Authority, MenuReference[]>([
   [
     Authority.TENANT_ADMIN,
     [
+      {id: MenuId.overview},
       {id: MenuId.home},
       {
         id: MenuId.alarms_center,
@@ -929,6 +942,7 @@ const defaultUserMenuMap = new Map<Authority, MenuReference[]>([
   [
     Authority.CUSTOMER_USER,
     [
+      {id: MenuId.overview},
       {id: MenuId.home},
       {id: MenuId.alarms},
       {id: MenuId.dashboards},

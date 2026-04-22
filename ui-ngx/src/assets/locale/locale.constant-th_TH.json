@@ -10238,6 +10238,9 @@
     "previous-page-label": "ก่อนหน้า หน้า",
     "items-per-page-separator": "ของ"
   },
+  "overview": {
+    "overview": "ภาพรวม"
+  },
   "language": {
     "auto": "อัตโนมัติ",
     "language": "ภาษา",
