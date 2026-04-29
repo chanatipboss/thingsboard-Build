@@ -18,7 +18,7 @@ import { DataToValueType, GetValueAction, GetValueSettings } from '@shared/model
 import { cssUnit, Font } from '@shared/models/widget-settings.models';
 import { defaultWidgetAction, WidgetAction } from '@shared/models/widget.models';
 
-const defaultMainColor = '#305680';
+const defaultMainColor = '#104089';
 const defaultBackgroundColor = '#E8E8E8';
 
 export const defaultMainColorDisabled = 'rgba(0, 0, 0, 0.38)';
@@ -98,7 +98,7 @@ export const segmentedButtonDefaultAppearance: ButtonToggleAppearance = {
   layout: SegmentedButtonLayout.squared,
   autoScale: true,
   cardBorder: 1,
-  cardBorderColor: '#305680',
+  cardBorderColor: '#104089',
   leftAppearance: {
     showLabel: true,
     label: 'Traditional',
