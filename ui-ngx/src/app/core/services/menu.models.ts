@@ -820,6 +820,34 @@ export const menuSectionMap = new Map<MenuId, MenuSection>([
   ]
 ]);
 
+const getDashboardIdFromPath = (menuId: MenuId): string | null => {
+  const section = menuSectionMap.get(menuId);
+  if (section?.path) {
+    const match = section.path.match(/\/dashboards\/([a-f0-9-]+)/);
+    return match ? match[1] : null;
+  }
+  return null;
+};
+
+const isDashboardMenuAllowed = (authState: AuthState, menuId: MenuId): boolean => {
+  const { allowedDashboardIds } = authState;
+  if (!allowedDashboardIds?.length) {
+    return true;
+  }
+  const dashboardId = getDashboardIdFromPath(menuId);
+  return dashboardId ? allowedDashboardIds.includes(dashboardId) : false;
+};
+
+const dashboardMenuIds = [
+  MenuId.overview,
+  MenuId.sites_plots_ponds,
+  MenuId.my_devices,
+  MenuId.my_alarms,
+  MenuId.my_tasks,
+  MenuId.my_analytics,
+  MenuId.my_users
+];
+
 const menuFilters = new Map<MenuId, MenuFilter>([
   [
     MenuId.edges, (authState) => authState.edgesSupportEnabled
@@ -829,7 +857,8 @@ const menuFilters = new Map<MenuId, MenuFilter>([
   ],
   [
     MenuId.rulechain_templates, (authState) => authState.edgesSupportEnabled
-  ]
+  ],
+  ...dashboardMenuIds.map(id => [id, (authState: AuthState) => isDashboardMenuAllowed(authState, id)] as [MenuId, MenuFilter])
 ]);
 
 const defaultUserMenuMap = new Map<Authority, MenuReference[]>([
