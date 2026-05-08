@@ -877,7 +877,7 @@ const defaultUserMenuMap = new Map<Authority, MenuReference[]>([
       {id: MenuId.my_tasks},
       {id: MenuId.my_analytics},
       {id: MenuId.my_users},
-      {id: MenuId.home},
+      // {id: MenuId.home},
       {id: MenuId.tenants},
       {id: MenuId.tenant_profiles},
       {
@@ -950,7 +950,7 @@ const defaultUserMenuMap = new Map<Authority, MenuReference[]>([
       {id: MenuId.my_tasks},
       {id: MenuId.my_analytics},
       {id: MenuId.my_users},
-      {id: MenuId.home},
+      // {id: MenuId.home},
       {
         id: MenuId.alarms_center,
         pages: [
@@ -1061,7 +1061,7 @@ const defaultUserMenuMap = new Map<Authority, MenuReference[]>([
       {id: MenuId.my_tasks},
       {id: MenuId.my_analytics},
       {id: MenuId.my_users},
-      {id: MenuId.home},
+      // {id: MenuId.home},
       {id: MenuId.alarms},
       {id: MenuId.dashboards},
       {
