@@ -33,7 +33,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { getCurrentAuthUser } from '@core/auth/auth.selectors';
 import { ConfirmOnExitGuard } from '@core/guards/confirm-on-exit.guard';
-import { MenuId } from '@core/services/menu.models';
+import { MenuId, menuDashboardIdMap } from '@core/services/menu.models';
 
 @Injectable()
 export class DashboardResolver  {
@@ -45,7 +45,7 @@ export class DashboardResolver  {
   }
 
   resolve(route: ActivatedRouteSnapshot): Observable<Dashboard> {
-    const dashboardId = route.params.dashboardId;
+    const dashboardId = route.params.dashboardId || route.data.dashboardId;
     return this.dashboardService.getDashboard(dashboardId).pipe(
       mergeMap((dashboard) =>
         (getCurrentAuthUser(this.store).isPublic ? of(null) :
@@ -62,7 +62,36 @@ export class DashboardResolver  {
 export const dashboardBreadcumbLabelFunction: BreadCrumbLabelFunction<DashboardPageComponent>
   = ((route, translate, component) => component.dashboard.title);
 
+const menuDashboardRouteConfigs: Array<{ path: string; menuId: MenuId }> = [
+  { path: 'overview', menuId: MenuId.overview },
+  { path: 'sites-plots-ponds', menuId: MenuId.sites_plots_ponds },
+  { path: 'my-devices', menuId: MenuId.my_devices },
+  { path: 'my-alarms', menuId: MenuId.my_alarms },
+  { path: 'my-tasks', menuId: MenuId.my_tasks },
+  { path: 'my-analytics', menuId: MenuId.my_analytics },
+  { path: 'my-users', menuId: MenuId.my_users },
+];
+
 const routes: Routes = [
+  ...menuDashboardRouteConfigs.map(({ path, menuId }) => ({
+    path,
+    component: DashboardPageComponent,
+    canDeactivate: [ConfirmOnExitGuard],
+    data: {
+      breadcrumb: {
+        labelFunction: dashboardBreadcumbLabelFunction,
+        icon: 'dashboard',
+        menuId
+      } as BreadCrumbConfig<DashboardPageComponent>,
+      auth: [Authority.TENANT_ADMIN, Authority.CUSTOMER_USER],
+      title: 'dashboard.dashboard',
+      widgetEditMode: false,
+      dashboardId: menuDashboardIdMap.get(menuId)
+    },
+    resolve: {
+      dashboard: DashboardResolver
+    }
+  })),
   {
     path: 'dashboards',
     data: {

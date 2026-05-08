@@ -128,7 +128,7 @@ export const menuSectionMap = new Map<MenuId, MenuSection>([
       id: MenuId.overview,
       name: 'overview.overview',
       type: 'link',
-      path: '/dashboards/f9a55a40-4a92-11f1-8410-895fbde4875e',
+      path: '/overview',
       icon: 'dashboard'
     }
   ],
@@ -138,7 +138,7 @@ export const menuSectionMap = new Map<MenuId, MenuSection>([
       id: MenuId.sites_plots_ponds,
       name: 'sites-plots-ponds.sites-plots-ponds',
       type: 'link',
-      path: '/dashboards/09f89510-4a93-11f1-8410-895fbde4875e',
+      path: '/sites-plots-ponds',
       icon: 'place'
     }
   ],
@@ -148,7 +148,7 @@ export const menuSectionMap = new Map<MenuId, MenuSection>([
       id: MenuId.my_devices,
       name: 'my-devices.my-devices',
       type: 'link',
-      path: '/dashboards/0f52ab40-4a93-11f1-8410-895fbde4875e',
+      path: '/my-devices',
       icon: 'memory'
     }
   ],
@@ -158,7 +158,7 @@ export const menuSectionMap = new Map<MenuId, MenuSection>([
       id: MenuId.my_alarms,
       name: 'my-alarms.my-alarms',
       type: 'link',
-      path: '/dashboards/1687ea10-4a93-11f1-8410-895fbde4875e',
+      path: '/my-alarms',
       icon: 'notifications_active'
     }
   ],
@@ -168,7 +168,7 @@ export const menuSectionMap = new Map<MenuId, MenuSection>([
       id: MenuId.my_tasks,
       name: 'my-tasks.my-tasks',
       type: 'link',
-      path: '/dashboards/1d3e8300-4a93-11f1-8410-895fbde4875e',
+      path: '/my-tasks',
       icon: 'assignment'
     }
   ],
@@ -178,7 +178,7 @@ export const menuSectionMap = new Map<MenuId, MenuSection>([
       id: MenuId.my_analytics,
       name: 'my-analytics.my-analytics',
       type: 'link',
-      path: '/dashboards/25ab0950-4a93-11f1-8410-895fbde4875e',
+      path: '/my-analytics',
       icon: 'bar_chart'
     }
   ],
@@ -188,7 +188,7 @@ export const menuSectionMap = new Map<MenuId, MenuSection>([
       id: MenuId.my_users,
       name: 'my-users.my-users',
       type: 'link',
-      path: '/dashboards/2bfe73a0-4a93-11f1-8410-895fbde4875e',
+      path: '/my-users',
       icon: 'people'
     }
   ],
@@ -820,14 +820,18 @@ export const menuSectionMap = new Map<MenuId, MenuSection>([
   ]
 ]);
 
-const getDashboardIdFromPath = (menuId: MenuId): string | null => {
-  const section = menuSectionMap.get(menuId);
-  if (section?.path) {
-    const match = section.path.match(/\/dashboards\/([a-f0-9-]+)/);
-    return match ? match[1] : null;
-  }
-  return null;
-};
+export const menuDashboardIdMap = new Map<MenuId, string>([
+  [MenuId.overview, 'f9a55a40-4a92-11f1-8410-895fbde4875e'],
+  [MenuId.sites_plots_ponds, '09f89510-4a93-11f1-8410-895fbde4875e'],
+  [MenuId.my_devices, '0f52ab40-4a93-11f1-8410-895fbde4875e'],
+  [MenuId.my_alarms, '1687ea10-4a93-11f1-8410-895fbde4875e'],
+  [MenuId.my_tasks, '1d3e8300-4a93-11f1-8410-895fbde4875e'],
+  [MenuId.my_analytics, '25ab0950-4a93-11f1-8410-895fbde4875e'],
+  [MenuId.my_users, '2bfe73a0-4a93-11f1-8410-895fbde4875e'],
+]);
+
+const getDashboardIdFromPath = (menuId: MenuId): string | null =>
+  menuDashboardIdMap.get(menuId) ?? null;
 
 const isDashboardMenuAllowed = (authState: AuthState, menuId: MenuId): boolean => {
   const { allowedDashboardIds } = authState;
