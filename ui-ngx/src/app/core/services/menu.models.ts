@@ -848,6 +848,11 @@ const dashboardMenuIds = [
   MenuId.my_users
 ];
 
+export const getMenuDashboardIds = (): string[] =>
+  dashboardMenuIds
+    .map(id => getDashboardIdFromPath(id))
+    .filter((id): id is string => id !== null);
+
 const menuFilters = new Map<MenuId, MenuFilter>([
   [
     MenuId.edges, (authState) => authState.edgesSupportEnabled

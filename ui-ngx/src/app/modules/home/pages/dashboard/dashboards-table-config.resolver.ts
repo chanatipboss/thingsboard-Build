@@ -82,6 +82,7 @@ import {
   ImportDashboardFileDialogComponent
 } from "@home/pages/dashboard/import-dashboard-file-dialog.component";
 import { PageLink } from "@shared/models/page/page-link";
+import { getMenuDashboardIds } from '@core/services/menu.models';
 
 @Injectable()
 export class DashboardsTableConfigResolver {
@@ -178,7 +179,10 @@ export class DashboardsTableConfigResolver {
         this.config.addEnabled = !(this.config.componentsData.dashboardScope === 'customer_user' ||
           this.config.componentsData.dashboardScope === 'edge_customer_user');
         this.config.entitiesDeleteEnabled = this.config.componentsData.dashboardScope === 'tenant';
-        this.config.deleteEnabled = () => this.config.componentsData.dashboardScope === 'tenant';
+        const menuDashboardIds = getMenuDashboardIds();
+        this.config.deleteEnabled = (dashboard) =>
+          this.config.componentsData.dashboardScope === 'tenant' &&
+          !menuDashboardIds.includes(dashboard?.id?.id);
         return this.config;
       })
     );
