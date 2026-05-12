@@ -1,0 +1,114 @@
+<div class="uf-root">
+
+  <!-- Loading Overlay -->
+  <div class="uf-loading-overlay">
+    <div class="uf-spinner"></div>
+  </div>
+
+  <!-- Breadcrumb -->
+  <div class="uf-breadcrumb">
+    <button class="uf-breadcrumb-back">Users</button>
+    <span class="material-icons uf-breadcrumb-arrow">chevron_right</span>
+    <span class="uf-breadcrumb-current"></span>
+  </div>
+
+  <!-- Form Body -->
+  <div class="uf-body">
+
+    <!-- Card: User Information -->
+    <div class="uf-card">
+
+      <!-- Card Title -->
+      <h2 class="uf-card-title">User information</h2>
+
+      <!-- Avatar Row -->
+      <div class="uf-avatar-row">
+        <div class="uf-avatar-wrapper">
+          <div class="uf-avatar-circle">
+            <span class="material-icons">person</span>
+            <img class="uf-avatar-img" src="" alt="" />
+          </div>
+          <label class="uf-upload-label">
+            <span class="material-icons">upload</span>
+            Upload profile photo
+            <input class="uf-avatar-file" type="file" accept="image/*" />
+          </label>
+        </div>
+      </div>
+
+      <!-- Row 1: First name + Last name -->
+      <div class="uf-field-row">
+        <div class="uf-field">
+          <label class="uf-label" for="uf-first-name">First name</label>
+          <input class="uf-input" id="uf-first-name" type="text" placeholder="Enter first name" />
+          <span class="uf-field-error"></span>
+        </div>
+        <div class="uf-field">
+          <label class="uf-label" for="uf-last-name">Last name</label>
+          <input class="uf-input" id="uf-last-name" type="text" placeholder="Enter last name" />
+          <span class="uf-field-error"></span>
+        </div>
+      </div>
+
+      <!-- Row 2: Email + Mobile -->
+      <div class="uf-field-row">
+        <div class="uf-field">
+          <label class="uf-label" for="uf-email">Email</label>
+          <input class="uf-input" id="uf-email" type="email" placeholder="Enter email address" />
+          <span class="uf-field-error"></span>
+        </div>
+        <div class="uf-field">
+          <label class="uf-label" for="uf-phone">Mobile number <span class="uf-optional">(Optional)</span></label>
+          <input class="uf-input" id="uf-phone" type="tel" placeholder="Enter mobile number" />
+          <span class="uf-field-error"></span>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="uf-divider"></div>
+
+      <!-- Section Title: Assignment -->
+      <h2 class="uf-card-title">Assignment <span class="uf-optional">(Optional)</span></h2>
+
+      <!-- Row 3: Role + Scope -->
+      <div class="uf-field-row">
+        <div class="uf-field">
+          <div class="uf-select-wrapper">
+            <select class="uf-select" id="uf-role">
+              <option value="">Select role</option>
+              <option value="SYS_ADMIN">System Admin</option>
+              <option value="TENANT_ADMIN">Tenant Admin</option>
+              <option value="CUSTOMER_USER">Customer</option>
+            </select>
+            <span class="material-icons uf-select-arrow">expand_more</span>
+          </div>
+        </div>
+        <div class="uf-field">
+          <div class="uf-select-wrapper">
+            <select class="uf-select" id="uf-scope">
+              <option value="all">All sites</option>
+            </select>
+            <span class="material-icons uf-select-arrow">expand_more</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- /Card -->
+
+  </div>
+
+  <!-- Footer Actions -->
+  <div class="uf-footer">
+    <button class="uf-btn-secondary uf-cancel-btn">Cancel</button>
+    <button class="uf-btn-primary uf-confirm-btn">Confirm</button>
+  </div>
+
+  <!-- Toast -->
+  <div class="uf-toast">
+    <span class="material-icons uf-toast-icon">check_circle</span>
+    <span class="uf-toast-msg"></span>
+    <button class="uf-toast-close"><span class="material-icons">close</span></button>
+  </div>
+
+</div>

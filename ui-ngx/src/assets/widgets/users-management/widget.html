@@ -1,0 +1,93 @@
+<div class="uw-root">
+
+  <!-- Loading Overlay -->
+  <div class="uw-loading-overlay">
+    <div class="uw-spinner"></div>
+  </div>
+
+  <!-- Error State -->
+  <div class="uw-error-state">
+    <span class="material-icons">error_outline</span>
+    <p class="uw-error-msg">Failed to load users.</p>
+    <button class="uw-btn-primary uw-retry-btn">Retry</button>
+  </div>
+
+  <!-- Main Content -->
+  <div class="uw-content">
+
+    <!-- Breadcrumb -->
+    <div class="uw-breadcrumb">
+      <span class="uw-breadcrumb-link">Users</span>
+    </div>
+
+    <!-- Toolbar: Role Filter + Action Buttons -->
+    <div class="uw-toolbar">
+      <div class="uw-filter-group">
+        <span class="material-icons uw-filter-icon">filter_list</span>
+        <button class="uw-filter-chip active" data-filter="all">All</button>
+        <button class="uw-filter-chip" data-filter="SYS_ADMIN">System Admin</button>
+        <button class="uw-filter-chip" data-filter="TENANT_ADMIN">Tenant Admin</button>
+        <button class="uw-filter-chip" data-filter="CUSTOMER_USER">Customer</button>
+      </div>
+      <div class="uw-action-group">
+        <button class="uw-btn-secondary uw-assign-btn">Assign scope</button>
+        <button class="uw-btn-primary uw-add-btn">
+          <span class="material-icons">add</span>
+          Add user
+        </button>
+      </div>
+    </div>
+
+    <!-- Table Section -->
+    <div class="uw-table-section">
+      <div class="uw-table-scroll">
+        <table class="uw-table">
+          <thead>
+            <tr class="uw-thead-row">
+              <th class="uw-col-user">User</th>
+              <th class="uw-col-email">Email</th>
+              <th class="uw-col-role">Role</th>
+              <th class="uw-col-scope">Scope</th>
+              <th class="uw-col-status">Status</th>
+              <th class="uw-col-last-active">Last active</th>
+              <th class="uw-col-actions"></th>
+            </tr>
+          </thead>
+          <tbody class="uw-tbody">
+            <!-- Rows injected by JS -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Empty State -->
+      <div class="uw-empty-state">
+        <span class="material-icons">group</span>
+        <p>No users found</p>
+      </div>
+    </div>
+
+    <!-- Pagination -->
+    <div class="uw-pagination">
+      <button class="uw-page-arrow uw-prev-btn" disabled>
+        <span class="material-icons">chevron_left</span>
+      </button>
+      <div class="uw-page-numbers">
+        <!-- Page number buttons injected by JS -->
+      </div>
+      <button class="uw-page-arrow uw-next-btn">
+        <span class="material-icons">chevron_right</span>
+      </button>
+    </div>
+
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="uw-toast">
+    <span class="material-icons uw-toast-icon">check_circle</span>
+    <span class="uw-toast-msg"></span>
+    <button class="uw-toast-close">
+      <span class="material-icons">close</span>
+    </button>
+  </div>
+
+</div>
